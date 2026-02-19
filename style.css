@@ -60,7 +60,7 @@ nav a:hover::after {
 
 /* Header */
 header {
-    background: linear-gradient(to right, #007bff, #0056b3);
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     color: #fff;
     padding: 4rem 2rem;
     text-align: center;
