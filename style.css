@@ -177,13 +177,8 @@ h2 {
 /* Footer */
 
 footer {
-
     text-align: center;
-
-    padding: 1.5rem;
-
-    background-color: #e9ecef;
-
-    color: #6c757d;
-
+    padding: 2rem;
+    background-color: #343a40;
+    color: #f8f9fa;
 }
