@@ -60,16 +60,28 @@ nav a:hover::after {
 
 /* Header */
 header {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: url('https://images.pexels.com/photos/326514/pexels-photo-326514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
     color: #fff;
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
     text-align: center;
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    position: relative;
 }
 
 /* Main Content */
