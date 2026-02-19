@@ -28,8 +28,19 @@ nav a {
     text-decoration: none;
 }
 
-h1, h2 {
+h1 {
     color: #0056b3;
+    animation: color-change 5s infinite;
+}
+
+h2 {
+    color: #0056b3;
+}
+
+@keyframes color-change {
+    0% { color: #0056b3; }
+    50% { color: #ff5733; }
+    100% { color: #0056b3; }
 }
 
 ul {
