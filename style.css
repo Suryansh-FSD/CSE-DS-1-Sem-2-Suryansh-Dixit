@@ -21,3 +21,14 @@ li {
     padding: 10px;
     border-radius: 5px;
 }
+
+iframe {
+    width: 100%;
+    max-width: 560px;
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 10px;
+    }
+}
