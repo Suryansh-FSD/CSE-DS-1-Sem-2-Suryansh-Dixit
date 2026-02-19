@@ -30,7 +30,7 @@ nav a {
 
 h1 {
     color: #0056b3;
-    animation: color-change 5s infinite;
+    animation: color-change 5s infinite, text-shadow-animation 5s infinite;
 }
 
 h2 {
@@ -41,6 +41,12 @@ h2 {
     0% { color: #0056b3; }
     50% { color: #ff5733; }
     100% { color: #0056b3; }
+}
+
+@keyframes text-shadow-animation {
+    0% { text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+    50% { text-shadow: -2px -2px 4px rgba(0,0,0,0.2); }
+    100% { text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
 }
 
 ul {
