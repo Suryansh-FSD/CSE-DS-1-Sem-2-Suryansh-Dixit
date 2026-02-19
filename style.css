@@ -6,6 +6,28 @@ body {
     color: #333;
 }
 
+nav {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
 h1, h2 {
     color: #0056b3;
 }
@@ -30,5 +52,10 @@ iframe {
 @media (max-width: 600px) {
     body {
         margin: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
     }
 }
