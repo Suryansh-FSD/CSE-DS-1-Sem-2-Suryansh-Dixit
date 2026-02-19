@@ -135,8 +135,8 @@ h2 {
 }
 
 .course-modules li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     border-top: 3px solid #007bff;
 }
 
