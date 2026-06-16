@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Amazon — Premium warm-minimalist storefront showcasing authentic curations.">
+  <meta name="keywords" content="Amazon, premium, minimalism, storefront, electronics, fashion, books">
+  <meta name="author" content="Suryansh Dixit">
+  <meta name="theme-color" content="#131921">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Amazon — Premium Storefront">
+  <meta property="og:description" content="A curated minimal storefront experience showcasing quality goods with direct INR pricing.">
+  <meta property="og:type" content="website">
+
+  <title>Amazon — Curated Storefront</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+</head>
+
+<body>
+
+<!-- ====================================================================
+     SITE HEADER — Sticky glassmorphic nav
+     ==================================================================== -->
+<header id="site-header" class="site-header" role="banner">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo" aria-label="Amazon — Home">
+      Amazon<span class="logo-dot">.</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <nav class="nav-links" id="desktop-nav" aria-label="Primary navigation">
+      <a href="#home-featured" class="nav-link active">All</a>
+      <a href="about.html" class="nav-link">Our Story</a>
+
+      <!-- Category dropdown -->
+      <div class="nav-dropdown-wrapper">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="category-dropdown">
+          Categories
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <ul id="category-dropdown" class="nav-dropdown-menu" role="menu">
+          <li role="none"><button class="dropdown-item" role="menuitem" data-cat="Electronics">Electronics</button></li>
+          <li role="none"><button class="dropdown-item" role="menuitem" data-cat="Laptops">Laptops</button></li>
+          <li role="none"><button class="dropdown-item" role="menuitem" data-cat="Fashion">Fashion</button></li>
+          <li role="none"><button class="dropdown-item" role="menuitem" data-cat="Home Appliances">Home Appliances</button></li>
+          <li role="none"><button class="dropdown-item" role="menuitem" data-cat="Books">Books</button></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Search -->
+    <div class="nav-search" role="search">
+      <form id="search-form" autocomplete="off">
+        <label for="search-input" class="sr-only">Search products</label>
+        <div class="search-bar">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;color:var(--ink-40);"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search products, brands…"
+            spellcheck="false"
+            aria-autocomplete="list"
+            aria-controls="search-dropdown"
+            aria-expanded="false"
+          >
+          <button type="submit" class="search-btn" aria-label="Search">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+        <ul id="search-dropdown" class="search-suggestions" role="listbox" aria-label="Search suggestions" hidden></ul>
+      </form>
+    </div>
+
+    <!-- Right actions -->
+    <div class="nav-actions" aria-label="Account and cart actions">
+
+      <!-- Wishlist -->
+      <button id="wishlist-btn" class="nav-icon-btn" aria-label="Wishlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span id="wishlist-badge" class="nav-badge" hidden aria-label="0 items in wishlist">0</span>
+      </button>
+
+      <!-- Cart -->
+      <button
+        id="cart-btn"
+        class="nav-icon-btn"
+        aria-label="Shopping cart"
+        aria-haspopup="true"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span id="cart-badge" class="nav-badge" aria-label="0 items in cart">0</span>
+      </button>
+
+      <!-- Login / Signup -->
+      <a href="login.html" class="nav-btn nav-btn-ghost" id="nav-login-btn">Sign in</a>
+      <a href="signup.html" class="nav-btn nav-btn-primary" id="nav-signup-btn">Get started</a>
+
+
+    </div>
+  </div>
+</header>
+
+
+
+<!-- ====================================================================
+     HERO SECTION
+     ==================================================================== -->
+<section id="hero" class="hero" aria-label="Hero — featured product">
+  <div class="container hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">Designed for intent. Engineered for clarity.</div>
+      <h1 class="hero-title">
+        The curated store.<br>
+        <span class="hero-title-gradient">Warm minimal space.</span>
+      </h1>
+      <p class="hero-subtitle">Experience a quiet, distraction-free environment showcasing premium goods with flat rates and fast, GST-inclusive calculations.</p>
+      <div class="hero-cta">
+        <button id="hero-shop-btn" class="btn-hero-primary">Browse Curation</button>
+        <button id="hero-explore-btn" class="btn-hero-secondary">Our Story →</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-number">20+</div>
+          <div class="hero-stat-label">Curation</div>
+        </div>
+        <div>
+          <div class="hero-stat-number">100%</div>
+          <div class="hero-stat-label">Authentic</div>
+        </div>
+        <div>
+          <div class="hero-stat-number">18%</div>
+          <div class="hero-stat-label">GST Flat</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero featured product card (rendered by JS) -->
+    <div class="hero-right" id="hero-product-slot"></div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     MAIN CONTENT
+     ==================================================================== -->
+<main id="main" role="main">
+
+
+
+  <!-- Featured Products -->
+  <section id="home-featured" class="home-section" aria-labelledby="featured-heading">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-label">Curated for you</p>
+          <h2 id="featured-heading" class="section-title">Amazon Curation</h2>
+        </div>
+        <!-- Strict text-based horizontal navigation track -->
+        <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter by category"></div>
+      </div>
+
+      <p id="results-info" class="results-info" aria-live="polite" aria-atomic="true" style="margin-bottom: 24px; font-size: 0.85rem; color: var(--ink-40);"></p>
+
+      <div id="product-grid" class="product-grid" role="list" aria-live="polite" aria-busy="false"></div>
+
+      <div id="empty-state" class="empty-state" hidden aria-live="polite" style="text-align: center; padding: 48px 0;">
+        <h3 style="margin: 16px 0 8px 0; font-family: var(--font-serif); font-style: italic; font-size: 1.8rem;">No matches found</h3>
+        <p style="color: var(--ink-40); margin-bottom: 24px;">Try a different search or clear your filter.</p>
+        <button id="clear-btn" class="filter-chip" style="background: var(--ink); color: white;">Clear filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deals Banner -->
+  <section class="container" aria-label="Special curation offers">
+    <div id="deals-banner" class="deals-banner">
+      <div>
+        <p class="deals-label">Seasonal Curation</p>
+        <h2 class="deals-title">Thoughtful designs.<br>Uncompromising utility.</h2>
+        <p class="deals-sub">Selected premium products, available for a limited time.</p>
+      </div>
+      <button id="deals-cta-btn" class="deals-cta">Shop Curations</button>
+    </div>
+  </section>
+
+  <!-- Trending Products -->
+  <section id="home-trending" class="home-section" aria-labelledby="trending-heading">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-label">Most loved</p>
+          <h2 id="trending-heading" class="section-title">Trending Gallery</h2>
+        </div>
+        <a href="#home-featured" class="section-link" id="view-all-trending" style="font-weight: 500; font-size: 0.9rem; color: var(--ink-40);">View all →</a>
+      </div>
+      <div id="trending-grid" class="product-grid" role="list" aria-label="Trending products"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ====================================================================
+     FOOTER
+     ==================================================================== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand-name">Amazon<span class="logo-dot">.</span></p>
+        <p class="footer-tagline">A premium shopping platform showcasing authentic curation and minimalist physical-to-digital layouts.</p>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Store</h3>
+        <ul class="footer-col-list">
+          <li><a href="#home-featured">All Products</a></li>
+          <li><a href="about.html">Origin Story</a></li>
+          <li><span>Subject: Web Development</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Student</h3>
+        <ul class="footer-col-list">
+          <li><span>Suryansh Dixit</span></li>
+          <li><span>Roll No: 2503215400200</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Account</h3>
+        <ul class="footer-col-list">
+          <li><a href="login.html">Sign In</a></li>
+          <li><a href="signup.html">Create Account</a></li>
+          <li><a href="forgot-password.html">Reset Password</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Amazon · Designed and engineered by Suryansh Dixit</p>
+      <p>B.Tech Sem II · Roll No: 2503215400200 · Web Development</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================================================================
+     OVERLAYS
+     ==================================================================== -->
+
+<!-- Cart Sidebar Drawer Popover -->
+<aside
+  id="cart-drawer"
+  class="cart-drawer"
+  popover
+  aria-label="Shopping cart"
+  aria-modal="true"
+>
+  <div class="drawer-head">
+    <h2 class="drawer-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Your Bag
+    </h2>
+    <button class="close-icon-btn" id="cart-close-btn" aria-label="Close cart">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="cart-items-list" class="cart-items-list" role="list"></div>
+  <div id="cart-footer-area" class="cart-footer">
+    <div class="cart-totals">
+      <div class="total-row"><span>Subtotal</span><span id="ct-sub">₹0</span></div>
+      <div class="total-row saving"><span>You save</span><span id="ct-save">-₹0</span></div>
+      <div class="total-row tax"><span>GST (18%)</span><span id="ct-gst">₹0</span></div>
+      <hr class="total-divider" aria-hidden="true">
+      <div class="total-row grand"><span>Total</span><span id="ct-grand">₹0</span></div>
+    </div>
+    <button id="checkout-btn" class="btn-checkout">
+      Proceed to Checkout
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+    <p class="cart-note">Free delivery above ₹499 · GST inclusive calculations</p>
+  </div>
+</aside>
+
+<!-- Product Detail Modal -->
+<dialog id="product-modal" class="product-modal" aria-modal="true" aria-labelledby="modal-title">
+  <button id="modal-close" class="modal-close" aria-label="Close product details">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="modal-body">
+    <div class="modal-img-col">
+      <div class="modal-img-wrap">
+        <img id="modal-img" src="" alt="" class="modal-img" loading="lazy" width="500" height="500" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22 viewBox=%220 0 200 200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23f4f4f0%22/%3E%3Ctext x=%22100%22 y=%22105%22 font-family=%22Inter,sans-serif%22 font-size=%2213%22 fill=%22%23b5b5b0%22 text-anchor=%22middle%22%3ENo Image%3C/text%3E%3C/svg%3E'">
+        <span id="modal-badge-pct" class="card-badge"></span>
+      </div>
+    </div>
+    <div class="modal-detail-col">
+      <span id="modal-brand" class="modal-brand"></span>
+      <h2 id="modal-title" class="modal-title"></h2>
+      <div class="modal-rating-row" style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px; color: var(--amazon-orange);">
+        <div id="modal-stars" class="stars" aria-hidden="true"></div>
+        <span id="modal-reviews" class="review-ct"></span>
+      </div>
+      <div class="modal-price-block">
+        <span id="modal-price-current" class="modal-price-current"></span>
+        <span id="modal-price-original" class="modal-price-original" style="text-decoration: line-through; color: var(--ink-40); margin-left: 8px;"></span>
+        <span id="modal-price-pct" class="modal-price-pct" style="color: var(--green); margin-left: 8px; font-weight: 600;"></span>
+      </div>
+      <p id="modal-desc" class="modal-desc"></p>
+      <div id="modal-stock" class="card-stock" style="margin-bottom: 24px;"></div>
+      <div class="modal-actions">
+        <div class="modal-qty-wrap">
+          <label for="modal-qty" class="modal-qty-label" style="font-size: 0.85rem; font-weight: 500;">Qty</label>
+          <select id="modal-qty" class="qty-num" aria-label="Select quantity" style="border: 1px solid var(--ink-10); border-radius: var(--r-sm); padding: 4px; background: var(--bg);">
+            <option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <button id="modal-add-btn" class="modal-add-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Add to Cart
+        </button>
+        <button id="modal-wish-btn" class="modal-wish-btn" aria-label="Toggle wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- Toast -->
+<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" aria-hidden="true">
+  <span id="toast-icon" class="toast-icon" aria-hidden="true"></span>
+  <span id="toast-msg" class="toast-msg"></span>
+</div>
+
+<script src="js/products.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

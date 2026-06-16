@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Secure checkout page for Amazon curated storefront. GST-inclusive billing and minimal aesthetics.">
+  <meta name="author" content="Suryansh Dixit">
+  <meta name="theme-color" content="#131921">
+  <title>Secure Checkout — Amazon</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💳</text></svg>">
+</head>
+<body>
+
+<!-- ====================================================================
+     SITE HEADER — Sticky glassmorphic nav
+     ==================================================================== -->
+<header id="site-header" class="site-header" role="banner">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="index.html" class="logo" aria-label="Amazon — Home">
+      Amazon<span class="logo-dot">.</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <nav class="nav-links" id="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html#home-featured" class="nav-link">All Products</a>
+      <a href="about.html" class="nav-link">Our Story</a>
+    </nav>
+
+    <!-- Right actions -->
+    <div class="nav-actions" aria-label="Account actions">
+      <span id="user-display" style="font-size: 0.85rem; font-weight: 500; color: var(--ink-80); padding: 8px 16px; display: none;"></span>
+      <a href="index.html" class="nav-btn nav-btn-ghost">Return to Store</a>
+    </div>
+  </div>
+</header>
+
+<!-- ====================================================================
+     MAIN CONTENT PANE
+     ==================================================================== -->
+<main id="main-pane" role="main">
+  <div class="container checkout-section">
+    <!-- Wrap everything inside a grid -->
+    <div class="checkout-grid" id="checkout-main-grid">
+      
+      <!-- Left side: Shipping & Billing Forms -->
+      <section class="checkout-card" aria-labelledby="billing-section-title">
+        <h1 id="billing-section-title" class="checkout-heading">Secure Checkout</h1>
+        
+        <form id="checkout-form" autocomplete="on" novalidate>
+          
+          <!-- Shipping Address Area -->
+          <div class="form-section">
+            <h2 class="checkout-subheading">1. Delivery Address</h2>
+            
+            <div class="form-group">
+              <label for="co-name" class="form-label">Full Name</label>
+              <input type="text" id="co-name" class="form-input" placeholder="e.g. Suryansh Dixit" required autocomplete="name">
+              <span class="validation-msg" id="err-name">Please enter your full name.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="co-email" class="form-label">Email Address</label>
+              <input type="email" id="co-email" class="form-input" placeholder="e.g. suryansh@example.com" required autocomplete="email">
+              <span class="validation-msg" id="err-email">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="co-address" class="form-label">Street Address</label>
+              <input type="text" id="co-address" class="form-input" placeholder="Apartment, suite, unit, street address" required autocomplete="street-address">
+              <span class="validation-msg" id="err-address">Please enter your delivery address.</span>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="co-city" class="form-label">City</label>
+                <input type="text" id="co-city" class="form-input" placeholder="e.g. New Delhi" required autocomplete="address-level2">
+                <span class="validation-msg" id="err-city">Please enter your city.</span>
+              </div>
+              <div class="form-group">
+                <label for="co-pincode" class="form-label">Pincode</label>
+                <input type="text" id="co-pincode" class="form-input" placeholder="6-digit pincode" maxlength="6" pattern="[0-9]{6}" required autocomplete="postal-code">
+                <span class="validation-msg" id="err-pincode">Please enter a valid 6-digit pincode.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Area -->
+          <div class="form-section" style="margin-top: 32px;">
+            <h2 class="checkout-subheading">2. Payment Method</h2>
+
+            <div class="payment-selector" role="radiogroup" aria-label="Select payment option">
+              <button type="button" class="payment-option active" id="btn-pay-card" role="radio" aria-checked="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                <span class="payment-option-title">Credit/Debit Card</span>
+              </button>
+              
+              <button type="button" class="payment-option" id="btn-pay-upi" role="radio" aria-checked="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <span class="payment-option-title">UPI Pay</span>
+              </button>
+
+              <button type="button" class="payment-option" id="btn-pay-cod" role="radio" aria-checked="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span class="payment-option-title">Cash on Delivery</span>
+              </button>
+            </div>
+
+            <!-- Dynamic Input Fields depending on Payment Choice -->
+            <div id="payment-pane-card" class="payment-details-pane">
+              <div class="form-group">
+                <label for="co-card-num" class="form-label">Card Number</label>
+                <input type="text" id="co-card-num" class="form-input" placeholder="16-digit card number" maxlength="19" autocomplete="cc-number">
+                <span class="validation-msg" id="err-card-num">Please enter a valid card number.</span>
+              </div>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="co-card-exp" class="form-label">Expiry Date</label>
+                  <input type="text" id="co-card-exp" class="form-input" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp">
+                  <span class="validation-msg" id="err-card-exp">Enter valid expiry date (MM/YY).</span>
+                </div>
+                <div class="form-group">
+                  <label for="co-card-cvv" class="form-label">CVV</label>
+                  <input type="password" id="co-card-cvv" class="form-input" placeholder="3-digit CVV" maxlength="3" autocomplete="cc-csc">
+                  <span class="validation-msg" id="err-card-cvv">Enter 3-digit CVV.</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="payment-pane-upi" class="payment-details-pane" style="display: none;">
+              <div class="form-group">
+                <label for="co-upi-id" class="form-label">UPI ID</label>
+                <input type="text" id="co-upi-id" class="form-input" placeholder="e.g. mobileNumber@upi / username@ybl">
+                <span class="validation-msg" id="err-upi-id">Please enter a valid UPI ID (e.g. user@bank).</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--ink-40); margin-top: 8px;">A notification request will be sent to your UPI app for authorization.</p>
+            </div>
+
+            <div id="payment-pane-cod" class="payment-details-pane" style="display: none;">
+              <p style="font-size: 0.88rem; color: var(--ink-80); font-weight: 500;">📦 Delivery Option Selected: Cash on Delivery</p>
+              <p style="font-size: 0.8rem; color: var(--ink-40); margin-top: 6px;">You will pay in cash or via digital UPI payment to the delivery partner when the order is delivered to your doorstep.</p>
+            </div>
+          </div>
+
+        </form>
+      </section>
+
+      <!-- Right side: Sticky Summary Panel -->
+      <aside class="sticky-summary" aria-label="Cart summary">
+        <div class="checkout-card">
+          <h2 class="checkout-subheading" style="border-bottom: none; margin-bottom: 8px;">Order Summary</h2>
+          
+          <div id="summary-items-container" class="summary-items-list">
+            <!-- Rendered dynamically by JS -->
+          </div>
+
+          <div class="totals-box">
+            <div class="totals-row">
+              <span>Items Subtotal</span>
+              <span id="co-sub">₹0</span>
+            </div>
+            <div class="totals-row savings">
+              <span>Total Curation Discount</span>
+              <span id="co-save">-₹0</span>
+            </div>
+            <div class="totals-row">
+              <span>Delivery Cost</span>
+              <span id="co-delivery">Free</span>
+            </div>
+            <div class="totals-row">
+              <span>GST (18% Flat rate)</span>
+              <span id="co-gst">₹0</span>
+            </div>
+            <div class="totals-row grand-total">
+              <span>Grand Total</span>
+              <span id="co-grand">₹0</span>
+            </div>
+          </div>
+
+          <button type="submit" form="checkout-form" class="btn-checkout-submit" id="btn-pay-action">
+            <span>Pay & Complete Order</span>
+            <svg class="checkout-submit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          
+          <p style="font-size: 0.75rem; color: var(--ink-40); text-align: center; margin-top: 16px;">
+            By completing your purchase you agree to our terms. GST-compliant billing.
+          </p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<!-- ====================================================================
+     MODAL LOADING OVERLAY
+     ==================================================================== -->
+<div id="loader-overlay" class="loader-overlay" aria-hidden="true" role="dialog" aria-label="Processing Payment">
+  <div class="loader-spinner" aria-hidden="true"></div>
+  <p class="loader-text" id="loader-text-message">Authenticating secure transaction...</p>
+</div>
+
+<!-- ====================================================================
+     FOOTER
+     ==================================================================== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand-name">Amazon<span class="logo-dot">.</span></p>
+        <p class="footer-tagline">A premium shopping platform showcasing authentic curation and minimalist physical-to-digital layouts.</p>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Store</h3>
+        <ul class="footer-col-list">
+          <li><a href="index.html#home-featured">All Products</a></li>
+          <li><a href="about.html">Origin Story</a></li>
+          <li><span>Subject: Web Development</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Student</h3>
+        <ul class="footer-col-list">
+          <li><span>Suryansh Dixit</span></li>
+          <li><span>Roll No: 2503215400200</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Account</h3>
+        <ul class="footer-col-list">
+          <li><a href="login.html">Sign In</a></li>
+          <li><a href="signup.html">Create Account</a></li>
+          <li><a href="forgot-password.html">Reset Password</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Amazon &middot; Designed and engineered by Suryansh Dixit</p>
+      <p>B.Tech Sem II &middot; Roll No: 2503215400200 &middot; Web Development</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast notifications -->
+<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" aria-hidden="true">
+  <span id="toast-icon" class="toast-icon" aria-hidden="true"></span>
+  <span id="toast-msg" class="toast-msg"></span>
+</div>
+
+<script src="js/products.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

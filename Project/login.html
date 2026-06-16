@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in to your Amazon account to access exclusive deals, your wishlist, and manage your cart.">
+  <title>Sign In — Amazon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+</head>
+<body>
+<div class="auth-page">
+
+  <!-- Left decorative panel -->
+  <div class="auth-left" role="presentation" aria-hidden="true">
+    <div class="auth-left-bg"></div>
+    <div class="auth-left-grid"></div>
+
+    <div class="auth-logo">Amazon<span class="logo-dot">.</span></div>
+
+    <div class="auth-left-content">
+      <h1 class="auth-left-headline">A return to<br><span style="color:var(--amazon-gold)">simplicity.</span></h1>
+      <p class="auth-left-sub">Sign in to access your curated gallery workspace, saved wishlists, and bag.</p>
+    </div>
+
+    <div class="auth-left-stats">
+      <div>
+        <div class="auth-stat-num">20+</div>
+        <div class="auth-stat-label">Curation</div>
+      </div>
+      <div>
+        <div class="auth-stat-num">100%</div>
+        <div class="auth-stat-label">Authentic</div>
+      </div>
+      <div>
+        <div class="auth-stat-num">18%</div>
+        <div class="auth-stat-label">GST Flat</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right — Form -->
+  <div class="auth-right">
+    <div class="auth-form-container">
+
+      <div class="auth-form-header">
+        <a href="index.html" class="logo" style="display:inline-block;margin-bottom:24px;font-size:1.8rem;">Amazon<span class="logo-dot">.</span></a>
+        <h2 class="auth-form-title">Sign in</h2>
+        <p class="auth-form-sub">New to the curation? <a href="signup.html" style="color:var(--amazon-orange); font-weight: 500;">Create an account →</a></p>
+      </div>
+
+      <!-- Success / Error banners -->
+      <div id="login-success" class="form-banner success" role="status" aria-live="polite">
+        <span>✓</span> <span id="success-msg">Signed in successfully!</span>
+      </div>
+      <div id="login-error" class="form-banner error" role="alert" aria-live="assertive">
+        <span>✕</span> <span id="error-msg">Invalid email or password.</span>
+      </div>
+
+      <!-- Social -->
+      <button type="button" class="btn-social" id="google-signin-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Continue with Google
+      </button>
+
+      <div class="auth-divider">or sign in with email</div>
+
+      <form id="login-form" novalidate>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+            aria-required="true"
+            aria-describedby="email-error"
+          >
+          <p id="email-error" class="form-error" role="alert">Please enter a valid email address.</p>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <label for="password" class="form-label">Password</label>
+            <a href="forgot-password.html" class="form-link" style="font-size: 0.8rem; color: var(--ink-40);">Forgot password?</a>
+          </div>
+          <div style="position: relative;">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-input"
+              placeholder="Enter password"
+              autocomplete="current-password"
+              required
+              aria-required="true"
+              aria-describedby="password-error"
+            >
+            <button type="button" id="toggle-password" aria-label="Toggle password visibility" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--ink-40); cursor: pointer;">
+              <svg id="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <p id="password-error" class="form-error" role="alert">Password must be at least 6 characters.</p>
+        </div>
+
+        <!-- Remember -->
+        <div class="form-check-row" style="margin-bottom: 24px;">
+          <label class="form-check-label" style="font-size: 0.85rem; color: var(--ink-80); cursor: pointer;">
+            <input type="checkbox" id="remember-me" name="remember" style="margin-right: 8px;"> Remember me
+          </label>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-auth-submit" id="login-submit">
+          <span id="login-btn-text">Sign in →</span>
+        </button>
+
+        <p style="text-align:center;font-size:0.78rem;color:var(--ink-40); margin-top: 24px;">
+          By signing in, you agree to our <a href="#" style="color:var(--amazon-orange);">Terms of Service</a> and <a href="#" style="color:var(--amazon-orange);">Privacy Policy</a>.
+        </p>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+const $ = id => document.getElementById(id);
+
+// Check if redirected from password reset success
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    if (localStorage.getItem('amz_reset_success') === '1') {
+      showSuccess('Password reset successfully! Please sign in.');
+      localStorage.removeItem('amz_reset_success');
+    }
+  } catch (_) {}
+});
+
+/* Toggle password visibility */
+$('toggle-password').addEventListener('click', () => {
+  const pwd = $('password');
+  const isText = pwd.type === 'text';
+  pwd.type = isText ? 'password' : 'text';
+  $('eye-icon').innerHTML = isText
+    ? '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'
+    : '<path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
+});
+
+/* Social login simulation */
+$('google-signin-btn').addEventListener('click', () => {
+  showSuccess('Signed in successfully.');
+  setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+});
+
+/* Form validation + submit */
+$('login-form').addEventListener('submit', e => {
+  e.preventDefault();
+  hideMessages();
+
+  const email = $('email').value.trim();
+  const pass  = $('password').value;
+  let valid   = true;
+
+  // Email validation
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showFieldError('email', 'email-error', true);
+    valid = false;
+  } else {
+    showFieldError('email', 'email-error', false);
+  }
+
+  // Password validation
+  if (!pass || pass.length < 6) {
+    showFieldError('password', 'password-error', true);
+    valid = false;
+  } else {
+    showFieldError('password', 'password-error', false);
+  }
+
+  if (!valid) return;
+
+  // Simulate auth check
+  const btn = $('login-submit');
+  btn.disabled = true;
+  $('login-btn-text').textContent = 'Signing in…';
+
+  setTimeout(() => {
+    // Check localStorage for registered users
+    const users = JSON.parse(localStorage.getItem('amz_users') || '[]');
+    const match = users.find(u => u.email === email && u.password === pass);
+
+    if (match) {
+      localStorage.setItem('amz_user', JSON.stringify({ name: match.name, email: match.email }));
+      showSuccess(`Welcome back, ${match.name.split(' ')[0]}! Redirecting…`);
+      setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+    } else if (users.length === 0 && email && pass.length >= 6) {
+      // Demo mode: accept any credentials if no users registered
+      const demoUser = { name: 'Member', email };
+      localStorage.setItem('amz_user', JSON.stringify(demoUser));
+      showSuccess('Signed in successfully.');
+      setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+    } else {
+      showError('Invalid email or password. Please try again.');
+      btn.disabled = false;
+      $('login-btn-text').textContent = 'Sign in →';
+    }
+  }, 900);
+});
+
+function showFieldError(inputId, errorId, show) {
+  const input = $(inputId);
+  const err   = $(errorId);
+  input.classList.toggle('error', show);
+  err.classList.toggle('show', show);
+}
+
+function showSuccess(msg) {
+  $('login-error').classList.remove('show');
+  $('success-msg').textContent = msg;
+  $('login-success').classList.add('show');
+}
+
+function showError(msg) {
+  $('login-success').classList.remove('show');
+  $('error-msg').textContent = msg;
+  $('login-error').classList.add('show');
+}
+
+function hideMessages() {
+  $('login-error').classList.remove('show');
+  $('login-success').classList.remove('show');
+}
+</script>
+</body>
+</html>
