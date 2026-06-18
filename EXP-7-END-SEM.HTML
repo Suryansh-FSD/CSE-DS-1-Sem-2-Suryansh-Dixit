@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Interest Calculator</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #9dac60;
+      color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #38bdf8;
+    }
+
+    input,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #475569;
+      background: #334155;
+      color: #fff;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: #0284c7;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0369a1;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #34d399;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Simple Interest</h2>
+
+    <input
+     type="number"
+      id="principal"
+      placeholder="Principal (P)"
+    >
+
+    <input
+      type="number" id="rate"placeholder="Rate of Interest (R %)"
+      step="0.01"
+    >
+
+    <input
+      type="number"
+      id="time"
+      placeholder="Time in Years (T)"
+      step="0.1"
+    >
+
+    <button onclick="calculateSI()">
+      Calculate SI
+    </button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const principalInput = document.getElementById("principal");
+    const rateInput = document.getElementById("rate");
+    const timeInput = document.getElementById("time");
+    const result = document.getElementById("result");
+
+    function calculateSI() {
+      const [p, r, t] = [
+        Number(principalInput.value),
+        Number(rateInput.value),
+        Number(timeInput.value)
+      ];
+
+      if ([p, r, t].some(v => isNaN(v) || v < 0)) {
+        result.textContent = "Enter valid positive values.";
+        return;
+      }
+
+      const interest = (p * r * t) / 100;
+
+      result.innerHTML = `
+        Interest: ₹${interest.toFixed(2)}<br>
+        Total Amount: ₹${(p + interest).toFixed(2)}
+      `;
+    }
+  </script>
+
+</body>
+</html>
